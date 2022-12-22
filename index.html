@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/cssScripts/style.css">
+    <title>phpQuiz</title>
+</head>
+<body>
+<!-- 
+    Bienvenue au quiz PHP
+    Dans ce quiz, vous obtiendrez votre résultat à la fin
+    Vous ne pourrez pas ignorer la question ou revenir à la question à laquelle vous avez répondu
+    vous pouvez terminer le test quand vous le souhaitez
+    Si vous ne pouvez pas répondre avant 15 secondes, votre réponse est considérée comme fausse
+    Les questions s'affichent dans un ordre aléatoire. Vous ferez de nouvelles découvertes à chaque fois!
+    Si vous êtes prêt, cliquez sur start quiz
+ -->
+<section class="pageInfo">
+    <h1>Bienvenue au quiz PHP</h1>
+    <ul>
+        <li>Dans ce quiz, vous obtiendrez votre résultat à la fin</li>
+        <li>Vous ne pourrez pas ignorer la question ou revenir à la question à laquelle vous avez répondu</li>
+        <li>vous pouvez terminer le test quand vous le souhaitez</li>
+        <li>Si vous ne pouvez pas répondre avant 15 secondes, votre réponse est considérée comme fausse</li>
+        <li>Les questions s'affichent dans un ordre aléatoire. Vous ferez de nouvelles découvertes à chaque fois!</li>
+        <li>Si vous êtes prêt, cliquez sur start quiz</li>
+    </ul>
+    <button class="startBtn" onclick="generateRandomNumber()">start quiz</button>
+</section>
+
+<section class="pageQue hidden">
+
+    <p class="ques"></p>
+    
+    <div><span class="choice1"></span></div>
+    <div><span class="choice2"></span></div>
+    <div><span class="choice3"></span></div>
+    <div><span class="choice4"></span></div>
+
+    <p class="quescoun">question 2/10</p>
+    <button class="exitBtn">exit Quiz</button>
+    <button class="nxtBtn hidden" onclick="generateRandomNumber()">next question</button>
+
+</section>
+
+<section class="pageRes hidden">
+    <p>tu es terminé le quiz avec une note de 10/10(100%)</p>
+</section>
+
+
+
+<script src="/jsScripts/questions.js"></script>
+    <script src="/jsScripts/script.js"></script>
+</body>
+</html>
