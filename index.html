@@ -33,12 +33,12 @@
 <section class="pageQue hidden">
 
     <p class="ques"></p>
-    
-    <div><span class="choice1"></span></div>
-    <div><span class="choice2"></span></div>
-    <div><span class="choice3"></span></div>
-    <div><span class="choice4"></span></div>
-
+    <div class="options">
+    <button class="choice1  choise_btn11 option" value="1"></button>
+    <button class="choice2  choise_btn21 option" value="2"></button>
+    <button class="choice3  choise_btn31 option" value="3"></button>
+    <button class="choice4  choise_btn41 option" value="4"></button>
+    </div>
     <p class="quescoun">question 2/10</p>
     <button class="exitBtn">exit Quiz</button>
     <button class="nxtBtn hidden" onclick="generateRandomNumber()">next question</button>
@@ -46,8 +46,11 @@
 </section>
 
 <section class="pageRes hidden">
-    <p>tu es terminé le quiz avec une note de 10/10(100%)</p>
+    <p class="answercount">tu es terminé le quiz avec une note de 10/10(100%)</p>
 </section>
+
+
+
 
 
 
