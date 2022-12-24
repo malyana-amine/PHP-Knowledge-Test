@@ -1,0 +1,75 @@
+$bodyColor : #FEFCF3;
+
+.hidden{
+    display: none;
+}
+body {
+    background-color: $bodyColor;
+}
+
+.pageInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+.pageInfo{
+    ul{
+        list-style: none;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+}
+.pageInfo{
+    ul{
+        li{
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+
+@for $i from 1 through 3 {
+    .button#{$i} {
+        color: #604242;
+        font-size: large;
+        font-weight: bold;
+        background-color: #DBA39A ;
+        border-radius: 12px;
+        padding: 15px;
+        border-style: none;
+        transition: all 300ms ease-in-out;
+    }
+}
+
+@for $i from 1 through 3 {
+    .hover-#{$i}:hover {
+        background-color: #F0DBDB ;
+        box-shadow: 0 0 7px #b07777;
+       
+    }
+}
+
+.pageQue{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.option{
+    width: 300px;
+    height: 30px;
+padding: 7px;
+margin: 5px;
+}

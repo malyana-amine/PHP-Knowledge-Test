@@ -49,12 +49,15 @@ let choise_btn41 = document.querySelector('.choise_btn41');
 
 btnstar.onclick = ()=>{
     pageInfo.classList.add("hidden");
+    pageInfo.classList.remove("pageInfo");
     pageQue.classList.remove("hidden");
 
     showQue(generateRandomNumber());
     quesNum(1);
 }
 exitBtn.onclick = ()=>{
+    pageInfo.classList.add("pageInfo");
+    nxtBtn.classList.add("hidden");
     pageInfo.classList.remove("hidden");
     pageQue.classList.add("hidden");
     // generateRandomNumber();
@@ -143,6 +146,7 @@ nxtBtn.onclick = ()=>{
         showQue(generateRandomNumber());
     }else{
         pageRes.classList.remove("hidden");
+        pageQue.classList.remove("pageQue");
         pageQue.classList.add("hidden");
     }
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/cssScripts/stylepure.css"> -->
     <link rel="stylesheet" href="/cssScripts/style.css">
     <title>phpQuiz</title>
 </head>
@@ -27,7 +28,7 @@
         <li>Les questions s'affichent dans un ordre aléatoire. Vous ferez de nouvelles découvertes à chaque fois!</li>
         <li>Si vous êtes prêt, cliquez sur start quiz</li>
     </ul>
-    <button class="startBtn" onclick="generateRandomNumber()">start quiz</button>
+    <button class="startBtn hover-1 button1" onclick="generateRandomNumber()">start quiz</button>
 </section>
 
 <section class="pageQue hidden">
@@ -40,9 +41,10 @@
     <button class="choice4  choise_btn41 option" value="4"></button>
     </div>
     <p class="quescoun">question 2/10</p>
-    <button class="exitBtn">exit Quiz</button>
-    <button class="nxtBtn hidden" onclick="generateRandomNumber()">next question</button>
-
+    <div>
+    <button class="exitBtn button2 hover-2">exit Quiz</button>
+    <button class="nxtBtn hidden button3 hover-3" onclick="generateRandomNumber()">next question</button>
+</div>
 </section>
 
 <section class="pageRes hidden">
