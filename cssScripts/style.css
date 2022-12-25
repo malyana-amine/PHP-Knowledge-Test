@@ -89,8 +89,51 @@ body {
 }
 
 .option {
+  background-color: #F0DBDB;
+  border-radius: 12px;
   width: 300px;
-  height: 30px;
+  height: 50px;
   padding: 7px;
   margin: 5px;
+  border-style: none;
+  transition: all 300ms ease-in-out;
+}
+
+.hover:hover {
+  background-color: #F5EBE0;
+  box-shadow: 0 0 7px #bc9393;
+}
+
+.option:active {
+  box-shadow: 0 0 7px #006de9;
+}
+
+.bonneAns {
+  background-color: rgba(0, 184, 120, 0.646);
+}
+
+.mauvAns {
+  background-color: rgba(255, 0, 0, 0.646);
+}
+
+.border {
+  box-shadow: 0 0 2px 3px #000000;
+}
+
+.textQue {
+  font-size: large;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.textInfo {
+  font-size: large;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.textTitle {
+  font-size: x-large;
+  font-weight: bolder;
+  font-family: "Courier New", Courier, monospace;
 }/*# sourceMappingURL=style.css.map */

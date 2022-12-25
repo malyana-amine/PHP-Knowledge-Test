@@ -19,8 +19,8 @@
     Si vous êtes prêt, cliquez sur start quiz
  -->
 <section class="pageInfo">
-    <h1>Bienvenue au quiz PHP</h1>
-    <ul>
+    <h1 class="textTitle">Bienvenue au quiz PHP</h1>
+    <ul class="textInfo">
         <li>Dans ce quiz, vous obtiendrez votre résultat à la fin</li>
         <li>Vous ne pourrez pas ignorer la question ou revenir à la question à laquelle vous avez répondu</li>
         <li>vous pouvez terminer le test quand vous le souhaitez</li>
@@ -28,32 +28,29 @@
         <li>Les questions s'affichent dans un ordre aléatoire. Vous ferez de nouvelles découvertes à chaque fois!</li>
         <li>Si vous êtes prêt, cliquez sur start quiz</li>
     </ul>
-    <button class="startBtn hover-1 button1" onclick="generateRandomNumber()">start quiz</button>
+    <button class="startBtn hover-1 textInfo button1" onclick="generateRandomNumber()">start quiz</button>
 </section>
 
-<section class="pageQue hidden">
+<section class="pageQue1 hidden">
 
-    <p class="ques"></p>
+    <p class="ques textQue"></p>
     <div class="options">
-    <button class="choice1  choise_btn11 option" value="1"></button>
-    <button class="choice2  choise_btn21 option" value="2"></button>
-    <button class="choice3  choise_btn31 option" value="3"></button>
-    <button class="choice4  choise_btn41 option" value="4"></button>
+    <button class="choice1 textQue choise_btn11 option hover" value="1"></button>
+    <button class="choice2 textQue choise_btn21 option hover" value="2"></button>
+    <button class="choice3 textQue choise_btn31 option hover" value="3"></button>
+    <button class="choice4 textQue choise_btn41 option hover" value="4"></button>
     </div>
-    <p class="quescoun">question 2/10</p>
+    <p class="quescoun textQue">question 2/10</p>
     <div>
-    <button class="exitBtn button2 hover-2">exit Quiz</button>
-    <button class="nxtBtn hidden button3 hover-3" onclick="generateRandomNumber()">next question</button>
+    <button class="exitBtn textInfo button2 hover-2">exit Quiz</button>
+    <button class="nxtBtn textInfo hidden button3 hover-3" onclick="generateRandomNumber()">next question</button>
+    <button class="resBtn textInfo hidden button3 hover-3">show your Result</button>
 </div>
 </section>
 
 <section class="pageRes hidden">
-    <p class="answercount">tu es terminé le quiz avec une note de 10/10(100%)</p>
+    <p class="textInfo answercount">tu es terminé le quiz avec une note de 10/10(100%)</p>
 </section>
-
-
-
-
 
 
 <script src="/jsScripts/questions.js"></script>
