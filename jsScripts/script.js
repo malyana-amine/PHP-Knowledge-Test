@@ -5,23 +5,63 @@ let pageQue1 = document.querySelector('.pageQue1');
 let pageRes = document.querySelector('.pageRes');
 let exitBtn = document.querySelector('.exitBtn');
 let nxtBtn = document.querySelector('.nxtBtn');
-
 let resBtn = document.querySelector('.resBtn');
-
 let quescoun = document.querySelector('.quescoun');
 let answercount = document.querySelector('.answercount');
 let options = document.querySelectorAll(".option");
 
-// let choise_btn1 = document.querySelector('.choise_btn1');
-// let choise_btn2= document.querySelector('.choise_btn2');
-// let choise_btn3 = document.querySelector('.choise_btn3');
-// let choise_btn4 = document.querySelector('.choise_btn4');
 
 let choise_btn11 = document.querySelector('.choise_btn11');
 let choise_btn21= document.querySelector('.choise_btn21');
 let choise_btn31 = document.querySelector('.choise_btn31');
 let choise_btn41 = document.querySelector('.choise_btn41');
 
+///////////////////////////
+
+let interval;
+function startTimer() {
+    let timer = 15;
+    interval = setInterval(function(){
+        document.getElementById('timer').textContent = 'time left '+timer;
+        timer--;
+        if (timer < 0) {
+            clearInterval(interval);
+            if(que_num<10){
+                nxtBtn.classList.remove("hidden");
+            }else{
+                resBtn.classList.remove("hidden");
+            }
+            choise_btn11.disabled = true;
+            choise_btn21.disabled = true;
+            choise_btn31.disabled = true;
+            choise_btn41.disabled = true;
+            options.forEach(hover=>{
+                hover.classList.remove("hover");
+            })
+
+
+            options.forEach(option=>{
+                if(option.value==questions[randomNumber].answer){
+                    option.classList.add("bonneAns")
+                }
+                else option.classList.add("mauvAns")
+            })
+        
+            
+        }
+    }, 900);
+}
+
+///////////////////////////
+
+let progressBar = document.querySelector('.progress-bar');
+let progressBarFill = progressBar.querySelector('.progress-bar-fill');
+
+let setProgress = (percentage) => {
+  progressBarFill.style.width = percentage + '%';
+};
+
+////////////////////////////
 
 
 
@@ -30,24 +70,31 @@ btnstar.onclick = ()=>{
     pageInfo.classList.remove("pageInfo");
     pageQue1.classList.remove("hidden");
     pageQue1.classList.add("pageQue");
-
+    answerCount = 0;
     showQue(generateRandomNumber());
+    setProgress(que_num*10);
     quesNum(1);
+    startTimer();
 }
+
 exitBtn.onclick = ()=>{
     pageQue1.classList.remove("pageQue");
     pageInfo.classList.add("pageInfo");
     nxtBtn.classList.add("hidden");
     pageInfo.classList.remove("hidden");
     pageQue1.classList.add("hidden");
+
+    clearInterval(interval);
     // generateRandomNumber();
     usedNumbers=[];
+    setProgress(0);
 
     choise_btn11.disabled = false;
     choise_btn21.disabled = false;
     choise_btn31.disabled = false;
     choise_btn41.disabled = false;
     que_count=0;
+    
     que_num = 1;
 
     options.forEach(bonneAns=>{
@@ -89,24 +136,20 @@ function generateRandomNumber() {
 let que_count = 0 ;
 let que_num = 1;
 nxtBtn.onclick = ()=>{
+    clearInterval(interval);
+    startTimer();
     nxtBtn.classList.add("hidden");
     if(que_count<questions.length-1){
         que_count++;
         que_num++;
         quesNum(que_num);
+        setProgress(que_num*10);
 
         choise_btn11.disabled = false;
-        // choise_btn11.classList.remove("bonneAns");
-        // choise_btn11.classList.remove("mauvAns");
         choise_btn21.disabled = false;
-        // choise_btn21.classList.remove("bonneAns");
-        // choise_btn21.classList.remove("mauvAns");
         choise_btn31.disabled = false;
-        // choise_btn31.classList.remove("bonneAns");
-        // choise_btn31.classList.remove("mauvAns");
         choise_btn41.disabled = false;
-        // choise_btn41.classList.remove("bonneAns");
-        // choise_btn41.classList.remove("mauvAns");
+
 
         options.forEach(option=>{
             option.classList.remove("bonneAns");
@@ -182,24 +225,24 @@ let optionselected = (answer1)=>{
     if (userUns == questions[randomNumber].answer){
             answerCount++;
             unswerNum(answerCount);
-            // answer1.classList.add("bonneAns");
-            console.log(answerCount)
+            answer1.classList.add("bonneAns");
+            // console.log(answerCount)
 
-            console.log(questions[randomNumber].answer)
-    }
+            // console.log(questions[randomNumber].answer)
+    }else answer1.classList.add("mauvAns");
 
 
     options.forEach(option=>{
         if(option.value==questions[randomNumber].answer){
             option.classList.add("bonneAns")
         }
-        else option.classList.add("mauvAns")
+        // else option.classList.add("mauvAns")
     })
     }
 
 
 let quesNum = (index)=>{
- quescoun.textContent = index+'/10';
+ quescoun.textContent = 'Vous êtes maintenant à la question numéro '+index;
 
 }
 let unswerNum = (index)=>{

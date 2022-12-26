@@ -33,6 +33,10 @@
 
 <section class="pageQue1 hidden">
 
+    <div class="progress-bar">
+        <div class="progress-bar-fill"></div>
+      </div>
+    
     <p class="ques textQue"></p>
     <div class="options">
     <button class="choice1 textQue choise_btn11 option hover" value="1"></button>
@@ -41,7 +45,10 @@
     <button class="choice4 textQue choise_btn41 option hover" value="4"></button>
     </div>
     <p class="quescoun textQue">question 2/10</p>
+    <!-- <p class="textQue timer">time left 15</p> -->
+    <div id="timer" class="textQue">time left 15</div>
     <div>
+    
     <button class="exitBtn textInfo button2 hover-2">exit Quiz</button>
     <button class="nxtBtn textInfo hidden button3 hover-3" onclick="generateRandomNumber()">next question</button>
     <button class="resBtn textInfo hidden button3 hover-3">show your Result</button>
@@ -49,7 +56,7 @@
 </section>
 
 <section class="pageRes hidden">
-    <p class="textInfo answercount">tu es terminé le quiz avec une note de 10/10(100%)</p>
+    <p class="textInfo answercount">tu es terminé le quiz avec une note de 0/10(0%)</p>
 </section>
 
 
