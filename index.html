@@ -4,20 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="/cssScripts/stylepure.css"> -->
     <link rel="stylesheet" href="/cssScripts/style.css">
     <title>phpQuiz</title>
 </head>
 <body>
-<!-- 
-    Bienvenue au quiz PHP
-    Dans ce quiz, vous obtiendrez votre résultat à la fin
-    Vous ne pourrez pas ignorer la question ou revenir à la question à laquelle vous avez répondu
-    vous pouvez terminer le test quand vous le souhaitez
-    Si vous ne pouvez pas répondre avant 15 secondes, votre réponse est considérée comme fausse
-    Les questions s'affichent dans un ordre aléatoire. Vous ferez de nouvelles découvertes à chaque fois!
-    Si vous êtes prêt, cliquez sur start quiz
- -->
+
 <section class="pageInfo">
     <h1 class="textTitle">Bienvenue au quiz PHP</h1>
     <ul class="textInfo">
@@ -46,11 +37,12 @@
     </div>
     <p class="quescoun textQue">question 2/10</p>
     <!-- <p class="textQue timer">time left 15</p> -->
+    
     <div id="timer" class="textQue">time left 15</div>
     <div>
     
     <button class="exitBtn textInfo button2 hover-2">exit Quiz</button>
-    <button class="nxtBtn textInfo hidden button3 hover-3" onclick="generateRandomNumber()">next question</button>
+    <button class="nxtBtn textInfo hidden button3 hover-3">next question</button>
     <button class="resBtn textInfo hidden button3 hover-3">show your Result</button>
 </div>
 </section>

@@ -10,7 +10,6 @@ let quescoun = document.querySelector('.quescoun');
 let answercount = document.querySelector('.answercount');
 let options = document.querySelectorAll(".option");
 
-
 let choise_btn11 = document.querySelector('.choise_btn11');
 let choise_btn21= document.querySelector('.choise_btn21');
 let choise_btn31 = document.querySelector('.choise_btn31');
@@ -49,7 +48,7 @@ function startTimer() {
         
             
         }
-    }, 900);
+    }, 1000);
 }
 
 ///////////////////////////
@@ -60,6 +59,7 @@ let progressBarFill = progressBar.querySelector('.progress-bar-fill');
 let setProgress = (percentage) => {
   progressBarFill.style.width = percentage + '%';
 };
+
 
 ////////////////////////////
 
@@ -205,6 +205,7 @@ let showQue = (index)=>{
 }
 let answerCount = 0;
 let optionselected = (answer1)=>{
+    clearInterval(interval);
     let userUns = answer1.value
     if(que_num<10){
     nxtBtn.classList.remove("hidden");
@@ -226,9 +227,6 @@ let optionselected = (answer1)=>{
             answerCount++;
             unswerNum(answerCount);
             answer1.classList.add("bonneAns");
-            // console.log(answerCount)
-
-            // console.log(questions[randomNumber].answer)
     }else answer1.classList.add("mauvAns");
 
 
@@ -239,13 +237,19 @@ let optionselected = (answer1)=>{
         // else option.classList.add("mauvAns")
     })
     }
-
-
 let quesNum = (index)=>{
  quescoun.textContent = 'Vous êtes maintenant à la question numéro '+index;
-
 }
 let unswerNum = (index)=>{
-
     answercount.textContent = 'tu es terminé le quiz avec une note de'+index+'/10('+ (index/10)*100 +'%)'
+
+    if(index<=4){
+        answercount.textContent = 'tu es terminé le quiz avec une note de '+index+'/10('+ (index/10)*100 +'%) tu peux faire mieux la prochaine fois'
+    }else if(index>4 && index<=6){
+        answercount.textContent = 'tu es terminé le quiz avec une note de '+index+'/10('+ (index/10)*100 +'%) Votre note est OK'
+    }else if(index>6 && index<9){
+        answercount.textContent = 'tu es terminé le quiz avec une note de '+index+'/10('+ (index/10)*100 +'%) Votre note est bonne'
+    }else if(index>=9){
+        answercount.textContent = 'tu es terminé le quiz avec une note de '+index+'/10('+ (index/10)*100 +'%) Votre note est parfait'
+    }
 }
